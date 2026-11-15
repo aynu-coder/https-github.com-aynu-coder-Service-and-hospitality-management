@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>BelTech Hospitality — Redirecting</title>
+    <script>
+      (function () {
+        var path = window.location.pathname || '/';
+        var idx = path.indexOf('/admin');
+        if (idx !== -1) {
+          var base = path.slice(0, idx);
+          window.location.replace((base || '') + '/#/admin');
+        } else {
+          window.location.replace('/');
+        }
+      })();
+    </script>
+  </head>
+  <body></body>
+</html>

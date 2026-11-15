@@ -1,0 +1,978 @@
+Hotel Management System – Comprehensive Software Requirements Document
+Prepared by: BelTech Solutions
+Project Type: Hotel, Restaurant, Bar & Hospitality Management System
+Product Strategy: Customizable, reusable software product (SaaS-ready)
+Core Modules: Stock Management, Order Management, Finance Management, Sales Management, Kitchen Management, and Business Intelligence Dashboard.
+1. Project Overview
+The proposed Hotel Management System is an integrated business management platform designed to digitize and automate hotel operations, including restaurant services, bar operations, cashier activities, kitchen workflows, inventory control, financial transactions, and business reporting.
+The system will provide centralized control over all hotel operations while allowing different employees to access the system based on their assigned roles and responsibilities.
+One of the most important objectives is to track every transaction by employee, understand how stock is consumed, manage customer orders, monitor bono-based transactions, and generate accurate financial and operational reports.
+The system will be designed as a reusable product by BelTech Solutions, meaning it can later be configured and deployed for different hotels, restaurants, bars, lounges, and hospitality businesses.
+Main objectives
+Centralize hotel sales, inventory, orders, and financial operations.
+Track sales and transactions by individual cashier, barman, and other employees.
+Digitize the communication between cashiers and kitchen staff.
+Manage bono issuance, redemption, and reconciliation.
+Automatically deduct stock when products are sold or consumed.
+Monitor revenue, expenses, profits, and outstanding balances.
+Provide management with real-time dashboards and detailed reports.
+Maintain accountability through user permissions and activity logs.
+Support multiple sales points, bars, kitchens, and departments.
+Provide an architecture that supports future expansion and resale.
+2. System Architecture and Main Modules
+Hotel Management System
+Order & POS
+Cashier, sales and billing
+Kitchen
+Preparation and order status
+Inventory
+Stock, transfers and consumption
+Bono Management
+Issuing and redemption
+Finance
+Income, expenses and payments
+Analytics
+Dashboards and reports
+Centralized User, Role & Permission Management
+All modules share one centralized database and transaction history.
+3. User Roles and Access Management
+Every employee will have an individual account with a username and password. The system will restrict access based on the employee's assigned role.
+This is essential for identifying who created an order, processed a payment, issued a bono, consumed stock, or performed a financial transaction.
+User Role
+Main Responsibilities
+System Administrator
+Full system configuration and access
+Hotel Manager
+Overall operations and performance monitoring
+Cashier
+Create orders, process payments, issue bonos
+Barman
+Manage drink orders, bono redemption and bar stock
+Kitchen Staff
+Receive, prepare and complete food orders
+Storekeeper
+Manage inventory, stock receipts and transfers
+Accountant
+Finance, income, expenses and reconciliation
+Supervisor
+Monitor sales, employees and daily operations
+
+3.1 Role-Based Permissions
+The system should support configurable permissions, including:
+View records.
+Create transactions.
+Edit transactions.
+Cancel transactions.
+Approve transactions.
+Process payments.
+Issue and redeem bonos.
+View financial reports.
+Export reports.
+Manage stock.
+Access management dashboards.
+Important: Cashiers should not automatically have access to financial reports, stock valuation, or other cashiers' transactions. Management should control these permissions.
+3.2 Employee Performance Tracking
+Every transaction must automatically record:
+Employee name and user ID.
+Transaction date and time.
+Transaction reference number.
+Sales point or department.
+Transaction amount.
+Payment method.
+Transaction status.
+Related customer/order information.
+Management should be able to compare the performance of individual cashiers and barmen.
+4. Order Management and POS System
+This is one of the most important modules of the system.
+The Order Management module will allow cashiers to create and manage customer orders for food, drinks, and other hotel services.
+4.1 Cashier POS Interface
+Each cashier will have access to a dedicated Point of Sale (POS) interface.
+Main functionalities:
+Select food or drink products from the product catalog.
+Select quantities.
+Add products to the customer's order.
+Select the table, customer, or order reference where applicable.
+Send food orders to the kitchen.
+Send drink orders to the bar.
+Process payments.
+Generate receipts.
+Track order preparation and completion.
+View personal sales history.
+4.2 Order Workflow
+The system should support the following operational process:
+Food Order Workflow
+Customer places an order
+Customer requests food from the cashier.
+Cashier creates the order
+The cashier selects food products and quantities using the POS interface.
+Order sent to kitchen
+The order appears immediately on the kitchen display, including the order number, items, quantities, and time.
+Kitchen prepares the order
+Kitchen staff view pending orders and update their preparation status.
+Kitchen marks order as ready
+The kitchen employee clicks "Ready" after completing the order.
+Cashier receives notification
+The cashier receives a notification that the order is ready for collection.
+Order delivered to customer
+The cashier or designated service employee collects and delivers the order.
+Order completed
+The system records the completion time and responsible employees.
+4.3 Order Status Management
+Each order should have a status:
+Status
+Description
+Draft
+Order is being created
+Confirmed
+Order is submitted
+In Preparation
+Kitchen has started preparing
+Ready
+Food is ready for collection
+Delivered
+Customer has received the order
+Completed
+Order process is closed
+Cancelled
+Order cancelled with reason
+
+4.4 Kitchen Display System (KDS)
+The kitchen should have a separate interface that displays orders in real time.
+POS2U Restaurant POS System | QR Ordering, Table Management & Kitchen KDS (Malaysia) | POS2U
+Free Restaurant POS Software for QSR, Bakery and Food Court Outlets | FoodCourtX
+10
+Features:
+Real-time order notifications.
+Display order number and cashier name.
+Display individual food items and quantities.
+Show order creation time.
+Show preparation duration.
+Mark orders as preparing.
+Mark orders as ready.
+Notify the cashier when orders are ready.
+Track delayed orders.
+Maintain completed order history.
+The kitchen user should not need access to cashier financial information.
+4.5 Multiple Kitchen Stations
+For future scalability, the system should support different preparation stations.
+Examples:
+Main kitchen.
+Grill section.
+Coffee section.
+Bakery section.
+Juice section.
+Products can be configured to route automatically to their respective preparation stations.
+5. Bar Management and Bono System
+This module is particularly important because of the hotel's bono-based drink and food transactions.
+The system should manage the entire lifecycle of bonos, from issuance to redemption and reconciliation.
+5.1 Bono Management
+A bono is a voucher or ticket that can be exchanged for a predefined food or drink item or monetary value.
+The system should support:
+Creating different bono types.
+Configuring bono values.
+Assigning eligible products.
+Issuing bonos to customers.
+Recording the employee who issued each bono.
+Redeeming bonos at the bar or food service point.
+Tracking redeemed and unredeemed bonos.
+Preventing duplicate redemption.
+Tracking expired or cancelled bonos.
+Generating bono reconciliation reports.
+5.2 Bono Types
+Examples of configurable bono types:
+Bono Type
+Example
+Drink Bono
+Exchangeable for a specific drink
+Food Bono
+Exchangeable for selected food
+Value Bono
+Exchangeable up to a specified monetary value
+Staff Bono
+Issued for authorized employee consumption
+Promotional Bono
+Issued as part of a promotion
+Complimentary Bono
+Issued for approved free service
+
+The hotel administrator should be able to configure these categories.
+5.3 Barman Workflow
+The barman should have an independent account and a dedicated bar interface.
+Bono Redemption & Drink Issuance
+Customer presents bono
+Customer gives the bono to the barman.
+Barman records the bono
+The barman scans or enters the bono number, or selects the appropriate bono type.
+System validates the bono
+The system checks whether the bono is valid, active, unused, and applicable to the requested product.
+Barman issues the drink
+The barman provides the drink to the customer.
+Stock is deducted
+The system automatically deducts the corresponding product quantity from the bar inventory.
+Bono is marked as redeemed
+The transaction is linked to the barman, product, date, and time.
+Management can reconcile
+Management compares issued bonos, redeemed bonos, and actual stock consumption.
+5.4 Important Bono Control Mechanisms
+The system should provide:
+Unique bono numbers or transaction references.
+Duplicate redemption prevention.
+Redemption date and time.
+Responsible barman identification.
+Product and quantity tracking.
+Bono issuing employee identification.
+Approval for exceptional or manual redemption.
+Cancellation and reversal tracking.
+Daily reconciliation.
+Example:
+Suppose a hotel issues 100 drink bonos during an event.
+Description
+Quantity
+Bonos issued
+100
+Bonos redeemed
+75
+Unredeemed bonos
+25
+Expected drinks issued
+75
+
+The management dashboard should show the reconciliation automatically.
+5.5 Bar Stock Consumption
+The barman should not manually calculate stock consumption.
+When a bono is redeemed or a paid drink is sold, the system should automatically deduct the configured stock quantity.
+For example:
+1 bottle of soft drink = 1 unit.
+1 glass of juice = configured quantity of juice ingredients.
+1 bottle of beer = 1 unit.
+1 cocktail = configured quantities of multiple ingredients.
+This requires a product recipe or Bill of Materials (BOM) functionality for products prepared from multiple ingredients.
+The system should also track stock adjustments, wastage, damaged products, and complimentary consumption.
+6. Stock and Inventory Management
+The Inventory Management module will provide centralized control over all hotel products, drinks, ingredients, and consumables.
+6.1 Product Management
+Each product should contain:
+Product name.
+Product code/SKU.
+Barcode (optional).
+Product category.
+Unit of measurement.
+Purchase price.
+Selling price.
+Minimum stock level.
+Current available quantity.
+Storage location.
+Product status.
+Expiration date, where applicable.
+6.2 Inventory Categories
+Examples:
+Food ingredients.
+Soft drinks.
+Alcoholic beverages.
+Juices.
+Coffee and tea.
+Kitchen consumables.
+Cleaning materials.
+General supplies.
+6.3 Multiple Stock Locations
+The system should support multiple inventory locations.
+For example:
+Location
+Purpose
+Main Store
+Central inventory
+Bar Store
+Drinks and beverages
+Kitchen Store
+Food ingredients
+Restaurant Store
+Restaurant consumables
+Branch Store
+Other operating locations
+
+6.4 Stock Operations
+The system should support:
+Purchase and stock receipt.
+Internal stock transfers.
+Stock issuance to departments.
+Stock consumption through sales.
+Stock consumption through bonos.
+Stock adjustments.
+Damaged product recording.
+Expired product management.
+Physical inventory counting.
+Stock reconciliation.
+Supplier and purchase history.
+Low-stock alerts.
+6.5 Automatic Stock Deduction
+The system should connect inventory directly with the POS and bono modules.
+Transaction
+Inventory Effect
+Paid drink sale
+Deduct drink stock
+Bono drink redemption
+Deduct drink stock
+Food order completed
+Deduct ingredients based on recipe
+Stock received
+Increase stock
+Transfer to bar
+Reduce main store, increase bar
+Damaged product
+Record stock loss
+Cancelled order
+Reverse stock reservation or consumption according to its status
+
+A key requirement is to prevent double deductions when an order is paid, prepared, or completed. The system must use a defined stock movement policy for each transaction type.
+6.6 Stock Reports
+Current stock report.
+Stock movement report.
+Stock valuation report.
+Stock consumption by department.
+Stock consumption by employee.
+Product sales and consumption report.
+Expired products report.
+Damaged products report.
+Low-stock report.
+Bono-related stock consumption.
+Purchase history.
+Stock adjustment report.
+7. Finance and Financial Management
+The Finance Management module will provide management with visibility into the hotel's financial performance.
+It should integrate with sales, POS, bono transactions, inventory purchases, and expenses.
+7.1 Income Management
+The system should automatically capture income from:
+Food sales.
+Drink sales.
+Restaurant sales.
+Bar sales.
+Other hotel services.
+Other configured income sources.
+Each income transaction should be linked to its source, cashier, date, payment method, and reference.
+7.2 Payment Management
+Support multiple payment methods:
+Cash.
+Bank transfer.
+Mobile money.
+POS/card payment.
+Credit or deferred payment.
+Bono or voucher redemption.
+Payment methods should be configurable according to the hotel's operations.
+7.3 Expense Management
+Management or authorized accountants should record expenses, including:
+Food purchases.
+Beverage purchases.
+Employee-related expenses.
+Utilities.
+Maintenance.
+Transportation.
+Rent.
+Operational expenses.
+Other miscellaneous expenses.
+Each expense should include its category, amount, date, payment method, description, and responsible user.
+7.4 Cashier Shift Management
+Every cashier should operate under an individual shift.
+Features:
+Open cashier shift.
+Record opening cash balance.
+Track transactions during the shift.
+Track cash sales.
+Track digital payments.
+Track refunds and cancellations.
+Calculate expected closing balance.
+Enter actual closing cash.
+Calculate cash differences.
+Submit shift for supervisor review.
+Close shift with approval where required.
+Example cashier closing report:
+Description
+Amount (ETB)
+Opening balance
+2,000
+Cash sales
+12,000
+Bank/mobile payments
+8,000
+Total sales
+20,000
+Expected cash
+14,000
+Actual cash
+13,800
+Cash difference
+-200
+
+This makes it possible to identify discrepancies and improve accountability.
+7.5 Financial Reports
+Daily income report.
+Daily expense report.
+Cashier collection report.
+Cash closing report.
+Payment method report.
+Department revenue report.
+Sales versus expenses.
+Profit and loss report.
+Bono financial liability/redemption report.
+Refund and cancellation report.
+Outstanding balances.
+Monthly and annual financial summaries.
+For accurate profit reporting, the system should calculate cost of goods sold using configured product and ingredient costs, rather than treating all sales revenue as profit.
+8. Management Dashboard and Business Intelligence
+The Dashboard module will give hotel owners and managers a centralized overview of business performance.
+The dashboard should be interactive, visual, and configurable, with graphs, KPI cards, date filters, and drill-down capabilities.
+Pearl Castle Studio - Ai Powered POS & ERP
+Understanding the Dashboard page – Lightspeed Restaurant (K-Series)
+Inventory Management Analysis
+13
+8.1 Main Dashboard KPIs
+The main dashboard should display:
+KPI
+Description
+Total Sales
+Total sales within the selected period
+Total Revenue
+Total recorded income
+Total Expenses
+Total expenses
+Gross Profit
+Revenue minus cost of goods sold
+Net Profit
+Income minus expenses and applicable costs
+Total Orders
+Number of orders processed
+Pending Orders
+Orders awaiting preparation or completion
+Completed Orders
+Successfully completed orders
+Bono Issued
+Total bonos issued
+Bono Redeemed
+Total bonos redeemed
+Total Stock Value
+Current inventory valuation
+Low Stock Products
+Products requiring replenishment
+
+8.2 Graphical Reports
+The dashboard should include different types of charts:
+Sales trend – line chart showing sales over time.
+Daily sales comparison – bar chart.
+Revenue by department – pie or doughnut chart.
+Sales by employee – bar chart.
+Top-selling products – horizontal bar chart.
+Food versus drink sales – comparative chart.
+Expenses by category – pie chart.
+Profitability trend – line chart.
+Bono issuance versus redemption – comparison chart.
+Stock consumption by category – bar chart.
+Payment methods – doughnut chart.
+Order processing performance – chart showing preparation and completion times.
+8.3 Date and Period Filters
+All reports and dashboard metrics should support flexible date selection.
+Reporting Period
+DailyWeeklyMonthlyYearlyCustom
+Illustrative reporting filter requirements, not connected to hotel data.
+Supported reporting periods:
+Daily reports.
+Weekly reports.
+Monthly reports.
+Quarterly reports.
+Annual reports.
+Custom date-range reports.
+Specific-day reports.
+Comparison between two periods.
+8.4 Advanced Report Filtering
+Users with appropriate permissions should filter reports by:
+Date and time.
+Cashier.
+Barman.
+Kitchen employee.
+Product.
+Product category.
+Department.
+Sales point.
+Payment method.
+Order status.
+Bono type.
+Stock location.
+Transaction type.
+8.5 Excel and PDF Export
+The system should support downloading reports in:
+Excel (.xlsx).
+PDF.
+CSV.
+Examples of downloadable reports:
+Daily sales report.
+Monthly revenue report.
+Sales by cashier.
+Sales by barman.
+Product sales report.
+Inventory report.
+Bono reconciliation report.
+Financial summary.
+Employee performance report.
+Expense report.
+Profit and loss report.
+Exported reports should respect the selected date range and filters.
+9. Sales and Employee Performance Management
+The system should make it easy for management to understand how much each employee contributes to the hotel's business.
+9.1 Cashier Performance
+Each cashier should have a personal performance report containing:
+Total sales.
+Total orders.
+Average order value.
+Cash sales.
+Digital payment sales.
+Cancelled orders.
+Refunds.
+Discounts.
+Shift opening and closing records.
+Cash discrepancies.
+9.2 Barman Performance
+Each barman should have a report containing:
+Total drinks issued.
+Paid drink sales.
+Bono-based drinks issued.
+Total bono redemptions.
+Stock consumed.
+Wastage recorded.
+Cancelled transactions.
+Sales generated by the barman.
+Difference between expected and actual stock consumption.
+9.3 Kitchen Performance
+Kitchen reports should include:
+Total orders received.
+Orders completed.
+Orders pending.
+Average preparation time.
+Delayed orders.
+Orders cancelled.
+Performance by kitchen employee or station.
+9.4 Employee Comparison
+Management should be able to compare employees over a selected period.
+For example:
+Employee
+Orders
+Sales (ETB)
+Average Order
+Cashier A
+120
+45,000
+375
+Cashier B
+95
+38,000
+400
+Cashier C
+110
+42,000
+381.82
+
+These are illustrative records.
+10. Customer and Table Management
+Although the primary requirement is hotel operations, customer and table management will make the system more suitable for different hospitality businesses.
+Features
+Customer registration.
+Customer contact information.
+Customer transaction history.
+Table creation and management.
+Table availability status.
+Assign orders to tables.
+Transfer orders between tables.
+Merge tables.
+Split bills.
+Manage takeaway orders.
+Manage dine-in orders.
+Manage room-based orders, if required.
+Customer credit and outstanding balances, subject to permission.
+Table Status
+Available.
+Occupied.
+Reserved.
+Waiting for service.
+Cleaning.
+This module should be configurable so a hotel can use the POS without enabling table management if it does not need it.
+11. Product, Recipe and Menu Management
+A configurable menu and recipe system is important for hotels and restaurants.
+11.1 Menu Management
+Create food menus.
+Create drink menus.
+Create beverage categories.
+Set product prices.
+Configure promotional prices.
+Enable or disable products.
+Configure product availability.
+Assign products to POS categories.
+Assign products to kitchen or bar stations.
+11.2 Recipe and Ingredient Management
+For prepared products, the system should support recipes.
+Example: A juice product may consume:
+Ingredient
+Quantity
+Orange
+0.5 kg
+Sugar
+0.02 kg
+Water
+0.25 L
+Cup
+1 unit
+
+When one juice is sold, the system deducts the configured ingredient quantities.
+Recipe quantities should be configurable, and management should be able to update recipes when preparation methods change.
+11.3 Product Costing
+The system should calculate:
+Product ingredient cost.
+Selling price.
+Gross margin.
+Profit per product.
+Profit by category.
+Best-performing products.
+Low-margin products.
+This helps management understand which menu items are financially performing well.
+12. Notifications and Internal Communication
+The system should include an internal notification mechanism to improve communication between departments.
+Notifications
+Event
+Notification Recipient
+New food order
+Kitchen
+New drink order
+Bar
+Order marked ready
+Cashier
+Order delayed
+Cashier/Supervisor
+Low stock
+Storekeeper/Manager
+Stock transfer request
+Storekeeper
+Stock adjustment request
+Manager
+Cashier shift submitted
+Supervisor
+Cash discrepancy
+Manager/Accountant
+Bono redemption
+Management/Authorized users
+
+Notifications should appear inside the system in real time where possible.
+Optional future integration: SMS, Telegram, or WhatsApp notifications.
+13. Audit Trail and Security
+Financial and inventory systems require strong accountability.
+The system should record important activities automatically.
+Audit Trail
+User login and logout.
+Order creation and modification.
+Order cancellation.
+Payment processing.
+Refund transactions.
+Bono issuance.
+Bono redemption.
+Stock receipt.
+Stock transfer.
+Stock adjustment.
+Expense registration.
+Financial approval.
+User permission changes.
+Each record should contain the responsible user, timestamp, reference, and action details.
+Security Requirements
+Individual user accounts.
+Role-based access control.
+Secure authentication.
+Password management.
+Session management.
+Restricted financial access.
+Approval workflows.
+Transaction history.
+Database backup and recovery.
+Protection against duplicate transactions.
+Completed financial transactions should not simply be deleted. Reversals and corrections should preserve the original transaction history.
+14. Administration and System Configuration
+The system should provide an administration panel that allows each hotel to configure its business operations without requiring software development.
+Configurable Settings
+Hotel name and logo.
+Business address and contact information.
+Departments.
+Branches and sales points.
+Employees and user accounts.
+Roles and permissions.
+Products and categories.
+Units of measurement.
+Payment methods.
+Bono types.
+Kitchen stations.
+Bar stations.
+Tables.
+Taxes and service charges.
+Receipt templates.
+Notification settings.
+Financial categories.
+Stock locations.
+Report access permissions.
+The product should support different configurations for different clients.
+15. Multi-Branch and Multi-Department Support
+For resale and future SaaS expansion, the platform should be designed with multi-company and multi-branch capabilities.
+A hotel may have:
+Main hotel.
+Restaurant.
+Main bar.
+Outdoor bar.
+Coffee shop.
+Additional branches.
+Each department can have its own sales points, employees, and stock locations.
+Management should be able to view:
+Individual department performance.
+Branch-level reports.
+Consolidated company-wide reports.
+Employee performance across departments.
+Stock transfers between locations.
+Department-level profitability.
+Each hotel using the software must have its own isolated business data and configuration.
+16. Proposed System Interfaces
+The system should have dedicated interfaces for different operational users.
+Restaurantes | NAOS POS
+1. Cashier POS Interface
+Simple product selection, order creation, payment processing, receipt printing, and order tracking.
+Free Restaurant POS Software for QSR, Bakery and Food Court Outlets | FoodCourtX
+2. Kitchen Interface
+Pending orders, preparation status, ready notifications, and completed orders.
+Rezku POS - Features & Pricing (March 2026)
+3. Barman Interface
+Drink sales, bono validation, drink issuance, and stock consumption.
+Inventory Management Software UAE — Stock Control | XYRA
+4. Storekeeper Interface
+Stock receipt, transfers, inventory adjustments, and stock monitoring.
+Deskera All in One Pricing & Reviews 2025 | Techjockey.com
+5. Accountant Interface
+Income, expenses, payment reconciliation, cash closing, and financial reports.
+Derangula Consulting — Premium Digital Consulting
+6. Management Dashboard
+Overall business performance, employee productivity, inventory, finance, and analytics.
+17. Technical and Non-Functional Requirements
+The platform should be developed with scalability, reliability, usability, and future commercialization in mind.
+17.1 Platform Requirements
+Web-based application accessible through modern browsers.
+Responsive design for desktop, tablet, and mobile.
+Dedicated interfaces for cashier, kitchen, bar, and management.
+Centralized database.
+Real-time order and notification updates.
+Multiple concurrent users.
+Support for multiple branches and departments.
+Configurable currency, taxes, and business settings.
+Printable receipts and transaction documents.
+Excel, PDF, and CSV report generation.
+17.2 Hardware Compatibility
+The platform should support:
+Desktop computers.
+Laptop computers.
+Android tablets.
+Touchscreen POS devices.
+Thermal receipt printers.
+Barcode scanners.
+Network-connected kitchen displays.
+17.3 Performance and Reliability
+Fast POS product selection and order processing.
+Reliable transaction recording.
+Prevention of duplicate orders and payments.
+Automated database backup.
+Error logging and monitoring.
+Secure data access.
+Recovery mechanisms in case of unexpected system interruptions.
+17.4 Suggested Technology Stack
+BelTech Solutions can choose the implementation stack based on the final product architecture.
+Component
+Suggested Technology
+Backend
+Python / Django or FastAPI
+Frontend
+React / Next.js
+Database
+PostgreSQL
+Real-time communication
+WebSockets
+Charts
+Recharts
+Excel reports
+OpenPyXL
+PDF reports
+ReportLab
+Deployment
+Linux VPS / Cloud
+Reverse proxy
+Nginx
+Containerization
+Docker
+
+The final stack should prioritize maintainability, transaction integrity, and ease of deploying the product for multiple hotels.
+18. Important Business Rules and Workflows
+These rules are particularly important to prevent operational and financial inconsistencies.
+Scenario
+Expected System Behavior
+Cashier creates a food order
+Kitchen receives the order
+Kitchen finishes food
+Cashier receives notification
+Customer purchases a drink
+Drink stock is deducted
+Customer redeems a drink bono
+Bono is validated and stock deducted
+Same bono is presented twice
+System rejects duplicate redemption
+Cashier cancels an order
+Cancellation is recorded with reason
+Order is cancelled after preparation
+Manager reviews stock and waste treatment
+Cashier closes shift
+System calculates expected cash
+Stock reaches minimum level
+Storekeeper receives an alert
+Manager changes a transaction
+Audit trail records the change
+Customer pays using multiple methods
+System records each payment separately
+
+18.1 Critical Bono Accounting Consideration
+A bono may represent a financial obligation even before it is redeemed.
+Therefore, the system should distinguish:
+Bono issued.
+Bono outstanding.
+Bono redeemed.
+Bono expired.
+Bono cancelled.
+The hotel should configure whether bonos are prepaid, complimentary, promotional, or employee-authorized.
+This prevents management from confusing the number of drinks served with actual cash revenue.
+18.2 Critical Inventory Consideration
+The system should differentiate between:
+Stock received by the main store.
+Stock transferred to the bar.
+Stock transferred to the kitchen.
+Stock sold to customers.
+Stock consumed through bonos.
+Stock used for preparation.
+Stock damaged or wasted.
+This is necessary to make stock reconciliation accurate.
+19. Product Expansion and Resale Strategy
+Since the objective is to develop a product that BelTech Solutions can resell, I recommend building it as a configurable Hospitality Management Platform rather than a system hardcoded for one hotel.
+The same core product can serve multiple business types.
+BelTech Hospitality Management Platform
+One platform, multiple hospitality business applications.
+COMO The Treasury - Perth Hotels - Perth, Australia - Forbes Travel Guide
+Hotels
+Restaurant, bar, kitchen and hotel services
+A new restaurant in Mumbai brings four beloved cuisines under one roof - Harpers bazaar
+Restaurants
+POS, tables, orders and kitchen management
+Opinie o hotelu Delphin Imperial Lara (Turcja, Alanya) » Fly.pl
+Bars & Lounges
+Drink sales, bonos and stock management
+Macro Straight™ Suspended Configurator
+Cafés
+POS, recipes and ingredient management
+Hotel Stella Palace Aqua Park Resort in Chersonissos günstig buchen bei TUI.com
+Resorts
+Multiple outlets and centralized reporting
+Événements Professionnels & CSE - Amour et Papilles
+Event & Catering
+Event orders, vouchers and consumption tracking
+19.1 Future Features
+The following can be introduced in subsequent product versions:
+Hotel room reservation management.
+Guest check-in and check-out.
+Room service management.
+Housekeeping management.
+Employee attendance and payroll integration.
+Supplier portal.
+Customer loyalty and membership.
+Online food ordering.
+QR-code menus.
+Customer mobile application.
+WhatsApp ordering and notifications.
+Accounting integration.
+Multi-company SaaS subscription management.
+Advanced business intelligence.
+Automated purchasing recommendations.
+These should be considered future expansion items, not mandatory components of the initial delivery.
+20. Recommended Development Phases
+I recommend developing the platform in phases to ensure the core operational workflows are reliable before introducing additional complexity.
+Phase
+Development Scope
+Phase 1
+System foundation, users, roles and configurations
+Phase 2
+Product, menu and inventory management
+Phase 3
+Cashier POS and order management
+Phase 4
+Kitchen display and real-time notifications
+Phase 5
+Bar management and bono management
+Phase 6
+Finance, cashier shifts and reconciliation
+Phase 7
+Dashboards, analytics and Excel/PDF reports
+Phase 8
+Testing, deployment, training and documentation
+
+Testing Requirements
+Before deployment, the development team should test:
+Multiple cashiers creating orders simultaneously.
+Multiple barmen processing bono transactions.
+Duplicate bono redemption prevention.
+Kitchen order notifications.
+Automatic stock deductions.
+Stock transfers between departments.
+Cancelled and refunded transactions.
+Cashier shift reconciliation.
+Financial report accuracy.
+Sales reports with different date filters.
+User access restrictions.
+Multi-branch data isolation.
+21. Expected Deliverables
+BelTech Solutions should deliver the following:
+Complete Hotel Management System.
+Administrator dashboard.
+Cashier POS interface.
+Kitchen management interface.
+Bar and bono management interface.
+Inventory management module.
+Finance management module.
+Management analytics dashboard.
+Employee and permission management.
+Excel, PDF and CSV reporting.
+Database setup and deployment.
+User documentation.
+System testing and quality assurance.
+Employee training.
+Deployment and handover.
+22. Final Product Vision
+The objective is not simply to develop a POS application for one hotel.
+The objective is to create a comprehensive, modular, and scalable Hospitality Management System that allows hotel owners to control their entire operational environment from a single platform.
+From the moment a cashier creates an order, to the kitchen preparing the food, the barman issuing drinks, the storekeeper managing stock, and the accountant reconciling finances, every operation should be connected.
+Management should be able to answer important business questions:
+How much did we sell today?
+Which cashier generated the highest sales?
+How many drinks did each barman issue?
+How many bonos were issued and redeemed?
+How much stock was consumed by the kitchen and bar?
+Which products generate the highest profit?
+How much money was collected through cash and digital payments?
+What are our daily, weekly, monthly, and yearly financial results?
+Where are we losing money or stock?
+The ultimate goal: One Platform. Complete Operational Control. Measurable Business Performance.
+23. My Strategic Recommendations for BelTech Solutions
+I would make five design decisions before development starts:
+1. Build it as a product, not a one-client application. Every hotel should have its own configurable departments, users, products, payment methods, and bono rules.
+2. Make the POS exceptionally simple. Cashiers and barmen should be able to process transactions quickly without navigating complicated ERP screens.
+3. Treat bono management as a core competitive feature. Many generic restaurant POS systems do not provide the level of voucher issuance, redemption, stock deduction, and reconciliation control described here.
+4. Make inventory and finance fully integrated. Avoid separate records that require manual reconciliation.
+5. Prioritize management reporting. Your dashboard and employee-level accountability can become major selling points when approaching hotels and restaurants.
+Suggested product positioning
+BelTech Hospitality
+Complete Hospitality Management Platform
+Manage your hotel, restaurant, bar, kitchen, inventory, sales, and finances from one centralized platform.
+Core capabilities
+Smart POS
+Kitchen Management
+Bono Management
+Inventory

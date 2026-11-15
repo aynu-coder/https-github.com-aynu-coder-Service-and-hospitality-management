@@ -1,0 +1,6 @@
+{
+  "name": "BelTech Hospitality",
+  "description": "Integrated Hotel, Restaurant, Bar, Kitchen, Bono, Inventory, and Finance Management Platform.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
